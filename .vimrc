@@ -1,4 +1,4 @@
-set t_RV= ttymouse=urxvt
+"set t_RV= ttymouse=xterm2
 
 
 set nocompatible              " be iMproved, required
@@ -10,10 +10,12 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+    " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" i3-vim-syntax
-Plugin 'PotatoesMaster/i3-vim-syntax'
+
+    " A full path fuzzy finder
+"Plugin 'kien/ctrlp.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -75,7 +77,7 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O 
 " Have no clue what these two mappings do.
 cmap ds tcd 
-"nnoremap <silent> <esc> :noh<cr><esc>
+nnoremap <silent> <esc> :noh<cr><esc>
 nnoremap <silent> <cr> :bn<cr><esc>
 set softtabstop=4 shiftwidth=4 expandtab
 set colorcolumn=110
@@ -86,6 +88,8 @@ set number
 set relativenumber
 " Turn on Syntax Highlighting
 syntax on
+"source ~/.vim/colors/blood
+source ~/.vim/colors/lily_dark.vim
 " by default, in insert mode backspace won't delete over line breaks, or 
 " automatically-inserted indentation, let's change that
 set backspace=indent,eol,start
