@@ -1,3 +1,6 @@
+set t_RV= ttymouse=urxvt
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -9,8 +12,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-"i3-vim-syntax
-"Plugin 'PotatoesMaster/i3-vim-syntax'
+" i3-vim-syntax
+Plugin 'PotatoesMaster/i3-vim-syntax'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -42,7 +45,7 @@ packadd! matchit
 " background
 set hidden
 " set unix line endings
-set fileformat=unix
+"set fileformat=unix
 " when reading files try unix line endings then dos, also use unix for new
 " buffers
 set fileformats=unix,dos
@@ -71,10 +74,8 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O 
 " Have no clue what these two mappings do.
-cmap w!! w !sudo tee >/dev/null %
-cmap F !open %
 cmap ds tcd 
-nnoremap <silent> <esc> :noh<cr><esc>
+"nnoremap <silent> <esc> :noh<cr><esc>
 nnoremap <silent> <cr> :bn<cr><esc>
 set softtabstop=4 shiftwidth=4 expandtab
 set colorcolumn=110
