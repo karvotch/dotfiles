@@ -74,7 +74,8 @@ inoremap {;<CR> {<CR>};<ESC>O
 cmap w!! w !sudo tee >/dev/null %
 cmap F !open %
 cmap ds tcd 
-nnoremap <silent> <esc> :noh<cr><esc>
+"nnoremap <silent> <esc> :noh<cr><esc>
+nnoremap <silent> f :noh<cr><esc>
 nnoremap <silent> <cr> :bn<cr><esc>
 set softtabstop=4 shiftwidth=4 expandtab
 set colorcolumn=110
