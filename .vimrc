@@ -16,6 +16,9 @@ Plugin 'VundleVim/Vundle.vim'
     " A full path fuzzy finder
 "Plugin 'kien/ctrlp.vim'
 
+    " GRUVBOX THEME
+Plugin 'morhetz/gruvbox'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -32,8 +35,12 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
+" Needed for gruvbox
+autocmd vimenter * colorscheme gruvbox
 
 
+
+" GENERAL OPTIONS
 " Detect file type and load plugin for it
 "filetype on
 "filetype plugin on
@@ -62,11 +69,13 @@ set nobackup
 set writebackup
 set noswapfile
 set autowriteall
+"set backupext=".bakup"
+set backupdir=/home/bob/.config/nvim/tmp/backup
 
-" PLUGIINS
 
 
-" EDITOR STYLE
+
+" SHORTCUTS
 inoremap " ""<left>
 inoremap ' ''<left>
 "inoremap ( ()<left>
@@ -75,21 +84,27 @@ inoremap [<CR> [<CR>]<ESC>O
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O 
-" Have no clue what these two mappings do.
-cmap ds tcd 
-nnoremap <silent> <esc> :noh<cr><esc>
-nnoremap <silent> <cr> :bn<cr><esc>
+
+
+nnoremap <silent> f :noh<cr><esc>
+nnoremap <silent> <CR> :bn<cr><esc>
+nnoremap <silent> <BS> :bN<cr><esc>
+
+
+
+
+" EDITOR STYLES
 set softtabstop=4 shiftwidth=4 expandtab
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 set guifont=Menlo-Regular:h14
+"set guicursor=
 " Show Line Numbers
 set number
 set relativenumber
 " Turn on Syntax Highlighting
 syntax on
-"source ~/.vim/colors/blood
-source ~/.vim/colors/lily_dark.vim
+
 " by default, in insert mode backspace won't delete over line breaks, or 
 " automatically-inserted indentation, let's change that
 set backspace=indent,eol,start
@@ -97,17 +112,68 @@ set autoindent
 set smartindent
 
 
-" SYNTAX FOR C++
 
 
-
-" SYNTAX FOR PYTHON
-
-
-
-" SYNTAX FOR HTML & JAVASCRIPT
-
-
-
-" SETTING UP SHORTCUTS
+" SETTING UP VARIABLES
 let $BASH_ENV = "~/.bash_aliases"
+
+
+
+
+" THEMES
+set background=dark
+"source ~/.vim/colors/lily_dark.vim
+
+" Scheme to match the original monokai background color
+"let g:molokai_original = 1
+" 256 color; dark.
+"let g:rehash256 = 1
+"source ~/.vim/colors/molokai.vim
+
+set termguicolors
+
+" This will reset the theme to the default.
+"colorscheme default
+
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='soft'
+
+let g:gruvbox_hls_cursor='green'
+colorscheme gruvbox
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
